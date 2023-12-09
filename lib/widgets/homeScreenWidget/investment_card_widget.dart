@@ -9,7 +9,7 @@ class InvestmentTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Card(
       child: ListTile(
-        title: Text("Home Load"),
+        title: Text("Home Loan"),
         subtitle: Text("You are 10 points away from your goal"),
       ),
     );
