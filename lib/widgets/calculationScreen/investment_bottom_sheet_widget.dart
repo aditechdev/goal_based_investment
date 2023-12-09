@@ -28,13 +28,37 @@ class InvestmentBottomSheetWidget extends StatelessWidget {
                   style: FontUtils.font20(color: Colors.white),
                 );
               }),
-          Row(
-            children: List.generate(
-                _investmentTime.length,
-                (index) => Chip(
-                    label: (_investmentTime[index] == -1)
-                        ? const Text("All")
-                        : Text(_investmentTime[index].toString()))),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    "Select Time Interval",
+                    style: FontUtils.font16(
+                      color: Colors.white.withOpacity(0.7),
+                    ),
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: List.generate(
+                      _investmentTime.length,
+                      (index) => Chip(
+                        label: (_investmentTime[index] == -1)
+                            ? const Text("All")
+                            : Text(
+                                _investmentTime[index].toString(),
+                              ),
+                      ),
+                    ),
+                  ),
+                ),
+                const Text("Investment Calculation")
+              ],
+            ),
           ),
           const Spacer(),
           SafeArea(
@@ -49,4 +73,4 @@ class InvestmentBottomSheetWidget extends StatelessWidget {
   }
 }
 
-List<int> _investmentTime = [1, 2, 3, 5, 7, 10, -1];
+List<int> _investmentTime = [1, 2, 3, 5, 7, 10, 20, 30, 50, -1];
