@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../controller/amount_selection_controller.dart';
@@ -56,8 +57,27 @@ class InvestmentBottomSheetWidget extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Text("Investment Calculation")
+                const Text("Investment Calculation"),
               ],
+            ),
+          ),
+          CarouselSlider(
+            items: List.generate(
+              10,
+              (index) => Card(
+                child: Container(
+                  height: 120,
+                  width: MediaQuery.of(context).size.width - 30,
+                  color: Colors.black,
+                ),
+              ),
+            ),
+            options: CarouselOptions(
+              aspectRatio: 2.5,
+              enlargeCenterPage: true,
+              autoPlay: false,
+              enlargeStrategy: CenterPageEnlargeStrategy.zoom,
+              enlargeFactor: 0.4,
             ),
           ),
           const Spacer(),
