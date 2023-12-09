@@ -13,6 +13,8 @@ class AmountSelectionController {
     _selectedCurrency.add(value);
   }
 
+  
+
   BehaviorSubject<CurrencyModel> get getSelectedCurrency => _selectedCurrency;
 }
 
