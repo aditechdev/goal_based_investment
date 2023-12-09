@@ -53,31 +53,8 @@ showBottomSheetForInvestment(BuildContext context) {
     context: context,
     isScrollControlled: true,
     builder: (BuildContext context) {
-      return BottomSheetContainer(
-        widget: Column(
-          children: [
-            const VerticalSpacing(height: 30),
-            StreamBuilder<CurrencyModel>(
-                stream: amountSelectionController.getSelectedCurrency,
-                builder: (context, snapshot) {
-                  if (!snapshot.hasData) {
-                    return const Text("");
-                  }
-                  return Text(
-                    "Goal amount ${snapshot.data!.amountInIndianFormat},",
-                    style: FontUtils.font20(color: Colors.white),
-                  );
-                }),
-            const Spacer(),
-            SafeArea(
-              child: ElevatedButton(
-                  onPressed: () {}, child: const Text("Start Investment")),
-            ),
-            const VerticalSpacing(height: 20)
-          ],
-        ),
-        color: Colors.deepPurple,
-      );
+      return InvestmentBottomSheetWidget();
     },
   );
 }
+
