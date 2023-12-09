@@ -3,8 +3,9 @@ class AppRoutes {
   static const String splashScreen = "/";
   static const String authenticationScreen = "/authentication";
 
-  // AuthenticatedRoute 
+  // AuthenticatedRoute
   static const String onBoardingScreen = "/onBoardingScreen";
   static const String homeScreen = "/homeScreen";
   static const String accountScreen = "/accountScreen";
+  static const String calculationScreen = "/calculationScreen";
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/font_utils.dart';
 import '../../widgets/homeScreenWidget/goal_card_list.dart';
 import '../../widgets/homeScreenWidget/investment_component.dart';
 
@@ -16,7 +15,10 @@ class HomePage extends StatelessWidget {
       body: const Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [GoalCardListWidget(), InvestmentComponent()],
+        children: [
+          GoalCardListWidget(),
+          InvestmentComponent(),
+        ],
       ),
     );
   }
