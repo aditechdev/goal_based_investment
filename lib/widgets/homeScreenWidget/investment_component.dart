@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:goal_based_investment/widgets/commonWidget/vertical_spacing.dart';
 import 'package:goal_based_investment/widgets/homeScreenWidget/investment_card_list.dart';
 
 import '../../const/resource.dart';
@@ -21,6 +22,7 @@ class InvestmentComponent extends StatelessWidget {
         if (snapshot.data!.isEmpty) {
           return Column(
             children: [
+              const VerticalSpacing(height: 30),
               Image.asset(R.ASSETS_IMAGE_START_GOAL_INVEST_IMG_PNG),
               ElevatedButton(
                   onPressed: () {
@@ -32,8 +34,11 @@ class InvestmentComponent extends StatelessWidget {
         }
 
         return Expanded(
-          child: InvestmentListWidget(
-            snapshot: snapshot,
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: InvestmentListWidget(
+              snapshot: snapshot,
+            ),
           ),
         );
       },

@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:goal_based_investment/model/goal_card_model.dart';
 import 'package:goal_based_investment/widgets/commonWidget/vertical_spacing.dart';
-import 'package:dotted_decoration/dotted_decoration.dart';
 
 import '../../utils/font_utils.dart';
+import '../commonWidget/dotted_text.dart';
 
 class GoalCardWidget extends StatelessWidget {
-  const GoalCardWidget({super.key});
+  const GoalCardWidget({super.key, required this.goal});
+
+  final GoalModel goal;
 
   @override
   Widget build(BuildContext context) {
@@ -17,48 +20,28 @@ class GoalCardWidget extends StatelessWidget {
             children: [
               const VerticalSpacing(height: 20),
               Container(
-                // height: 90,
-                width: 150,
+                width: 250,
                 padding: const EdgeInsets.only(
                   left: 14,
                   top: 25,
                   bottom: 14,
                   right: 14,
                 ),
-                // margin: ,1
-
-                decoration: const BoxDecoration(
-                  color: Colors.red,
-                  // color: Color(int.parse(emiData.getColor())),
-                  borderRadius: BorderRadius.all(Radius.circular(16)),
+                decoration: BoxDecoration(
+                  color: goal.color,
+                  borderRadius: const BorderRadius.all(Radius.circular(16)),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    // CustomBigRadioButtomWidget(
-                    //   topPadding: 5,
-                    //   isSelected: isSelected,
-                    //   selectedBoxColor:
-                    //       Color(int.parse(emiData.getSelectedColor())),
-                    //   unselectedBoxColor: Color(int.parse(emiData.getColor())),
-                    // ),
-                    // const VerticalSpace(height: 10),
                     RichText(
                       text: TextSpan(
                         children: <TextSpan>[
                           TextSpan(
-                              // text: emiData
-                              //     .currency.currencyInIndianFormatWithSymbol,
+                              text: goal.name,
                               style: FontUtils.font16(
                                   color: Colors.white,
                                   fontWeight: FontWeight.bold)),
-                          TextSpan(
-                            text: ' /mo',
-                            style: FontUtils.font14(
-                              color: Colors.white.withOpacity(0.4),
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
                         ],
                       ),
                     ),
@@ -70,17 +53,17 @@ class GoalCardWidget extends StatelessWidget {
                         ),
                         children: <TextSpan>[
                           const TextSpan(
-                            text: "for ",
+                            text: "Lorem Ipsum ",
                           ),
                           TextSpan(
-                            text: 'emiData.month',
+                            text: 'Goal in ${goal.interval}',
                             style: FontUtils.font13(
                               color: Colors.white.withOpacity(0.8),
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          const TextSpan(
-                            text: ' months',
+                          TextSpan(
+                            text: ' ${goal.intervalType}',
                           ),
                         ],
                       ),
@@ -101,64 +84,8 @@ class GoalCardWidget extends StatelessWidget {
               ),
             ],
           ),
-          if (true)
-            const Positioned(
-              top: 10,
-              left: 23,
-              right: 23,
-              child: RecomendedLabelWidget(),
-            )
         ],
       ),
     );
-  }
-}
-
-class RecomendedLabelWidget extends StatelessWidget {
-  const RecomendedLabelWidget({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 2,
-        vertical: 2,
-      ),
-      decoration: const BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(16))),
-      child: Center(
-        child: Text(
-          "recommended",
-          style: FontUtils.font12(),
-        ),
-      ),
-    );
-  }
-}
-
-class DottedText extends StatelessWidget {
-  final Text widget;
-  final Color dottedBodderColor;
-  final double strokeWidth;
-  const DottedText({
-    super.key,
-    required this.widget,
-    this.dottedBodderColor = Colors.black,
-    this.strokeWidth = 0.6,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        // height: 2,
-        decoration: DottedDecoration(
-            linePosition: LinePosition.bottom,
-            color: dottedBodderColor,
-            strokeWidth: strokeWidth,
-            shape: Shape.line),
-        child: widget);
   }
 }
