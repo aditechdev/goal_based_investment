@@ -68,7 +68,20 @@ class InvestmentBottomSheetWidget extends StatelessWidget {
                 child: Container(
                   height: 120,
                   width: MediaQuery.of(context).size.width - 30,
-                  color: Colors.black,
+                  decoration: BoxDecoration(
+                    gradient: const LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [Colors.blue, Colors.green],
+                    ),
+                    borderRadius: BorderRadius.circular(10.0),
+                  ),
+                  child: Center(
+                    child: Text(
+                      "InvestMent1 ",
+                      style: FontUtils.font18(color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
             ),
