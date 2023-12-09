@@ -5,8 +5,7 @@ class AuthController {
   setInitialScreen(BuildContext context) {
     final isAuthenticatted = isAuthenticated();
     isAuthenticatted
-        ? Navigator.pushNamedAndRemoveUntil(
-            context, AppRoutes.homeScreen, (route) => false)
+        ? navigateToHomeScreen(context)
         : Navigator.pushNamedAndRemoveUntil(
             context, AppRoutes.onBoardingScreen, (route) => false);
   }
@@ -20,12 +19,22 @@ class AuthController {
     print("User login");
     // TOdo : User Login
 
+    navigateToHomeScreen(context);
+  }
+
+  void navigateToHomeScreen(BuildContext context) {
     Navigator.pushNamedAndRemoveUntil(
         context, AppRoutes.homeScreen, (route) => false);
   }
 
-  Future<void> logOut() async {
+  void navigateToAuthenticationScreen(BuildContext context) {
+    Navigator.pushNamedAndRemoveUntil(
+        context, AppRoutes.authenticationScreen, (route) => false);
+  }
+
+  Future<void> logOut(BuildContext context) async {
     // TOdo : User Logout
+    navigateToAuthenticationScreen(context);
   }
 
   bool isAuthenticated() {
