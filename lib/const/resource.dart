@@ -24,6 +24,10 @@ class R {
   static const String ASSETS_IMAGE_SIGN_UP_IMAGE_PNG =
       'assets/image/sign_up_image.png';
 
+  /// ![preview](file:///Users/adityaanand/Downloads/project/flutter/goal_based_investment/assets/image/slider_thumb.png)
+  static const String ASSETS_IMAGE_SLIDER_THUMB_PNG =
+      'assets/image/slider_thumb.png';
+
   /// ![preview](file:///Users/adityaanand/Downloads/project/flutter/goal_based_investment/assets/image/start_goal_invest_img.png)
   static const String ASSETS_IMAGE_START_GOAL_INVEST_IMG_PNG =
       'assets/image/start_goal_invest_img.png';

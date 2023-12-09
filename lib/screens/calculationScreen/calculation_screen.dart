@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:goal_based_investment/controller/goal_controller.dart';
 import 'package:goal_based_investment/model/goal_card_model.dart';
 
+import '../../widgets/calculationScreen/slider_with_container_widget.dart';
+import '../../widgets/commonWidget/button_widget.dart';
+
 class CalculationScreen extends StatefulWidget {
   const CalculationScreen({super.key});
 
@@ -22,6 +25,14 @@ class _CalculationScreenState extends State<CalculationScreen> {
             );
           },
         ),
+      ),
+      body: const Column(
+        children: [
+          SliderWithContainerWidget(),
+        ],
+      ),
+      bottomNavigationBar: SafeArea(
+        child: BottomCurvedButton(onTap: () {}, btnText: "Start Investment",),
       ),
     );
   }
