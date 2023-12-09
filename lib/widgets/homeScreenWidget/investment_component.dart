@@ -28,7 +28,10 @@ class InvestmentComponent extends StatelessWidget {
                   onPressed: () {
                     investmentController.addInvestment();
                   },
-                  child: const Text("Start Investing"))
+                  child: const Text("Start Investing")),
+              const Text(
+                "You are one step away from your Goal",
+              )
             ],
           );
         }
