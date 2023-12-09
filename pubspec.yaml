@@ -22,6 +22,7 @@ dependencies:
   liquid_swipe: ^3.1.0 # To add liquid swipe animation used in onboarding
   shared_preferences: ^2.2.2 # To Save data locally
   lottie: ^2.7.0 # To display animation assets
+  dotted_decoration: ^2.0.0
 
 dev_dependencies:
   flutter_test:

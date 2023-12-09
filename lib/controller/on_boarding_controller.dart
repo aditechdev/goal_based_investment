@@ -41,3 +41,6 @@ class OnBoardingController {
   BehaviorSubject<int> get getCurrentPage => _currentPage;
   LiquidController get getLiquidController => _controller;
 }
+
+  final OnBoardingController  onBoardingController = OnBoardingController();
+
