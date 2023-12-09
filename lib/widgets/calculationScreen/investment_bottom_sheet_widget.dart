@@ -30,11 +30,11 @@ class InvestmentBottomSheetWidget extends StatelessWidget {
               }),
           Row(
             children: List.generate(
-                investmentTime.length,
+                _investmentTime.length,
                 (index) => Chip(
-                    label: (investmentTime[index] == -1)
+                    label: (_investmentTime[index] == -1)
                         ? const Text("All")
-                        : Text(investmentTime[index].toString()))),
+                        : Text(_investmentTime[index].toString()))),
           ),
           const Spacer(),
           SafeArea(
@@ -49,4 +49,4 @@ class InvestmentBottomSheetWidget extends StatelessWidget {
   }
 }
 
-List<int> investmentTime = [1, 2, 3, 5, 7, 10, -1];
+List<int> _investmentTime = [1, 2, 3, 5, 7, 10, -1];
